@@ -20,24 +20,24 @@ const DivisionSquare: React.FC<DivisionSquareProps> = ({ divisionNumber, divisio
   return (
     <>
       <div
-        onClick={onClick}
-        className={`
-          group
-          relative 
-          w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40
-          m-2 sm:m-3
-          border-2 rounded-xl 
-          flex flex-col items-center justify-center 
-          cursor-pointer 
-          transition-all duration-300 ease-in-out
-          transform hover:scale-105 hover:shadow-2xl
-          shadow-lg
-          overflow-hidden
-          p-2
-          ${className}
-          ${divisionNumber === 1 ? 'animate-pulse-glow' : ''}
-        `}
-      >
+  onClick={onClick}
+  className={`
+    group
+    relative 
+    w-48 h-32 sm:w-56 sm:h-36 md:w-64 md:h-40   /* width > height for rectangle */
+    m-2 sm:m-2
+    border-2 rounded-xl 
+    flex flex-col items-center justify-center 
+    cursor-pointer 
+    transition-all duration-300 ease-in-out
+    transform hover:scale-105 hover:shadow-2xl
+    shadow-lg
+    overflow-hidden
+    p-2
+    ${className}
+    ${divisionNumber === 1 ? 'animate-pulse-glow' : ''}
+  `}
+>
         <div 
           className={`
             absolute -top-2 -right-2

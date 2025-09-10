@@ -7,6 +7,7 @@ import { FloatingEmoji } from './components/FloatingEmoji';
 import { DIVISION_DATA, SPRINT_DATA } from './constants';
 import DivisionPyramid from './components/DivisionPyramid';
 import { initializeSprintData } from './utils';
+import Timeline from './components/DivisionPyramid';
 
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,7 +58,7 @@ const App: React.FC = () => {
           <StatsBubble totalParticipants={totalParticipants} totalEmployees={totalEmployees} />
         </div>
         
-        <DivisionPyramid sprintData={sprintData} />
+        <Timeline sprintData={sprintData} />
       </main>
     </div>
   );

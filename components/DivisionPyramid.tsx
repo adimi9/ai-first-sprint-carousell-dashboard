@@ -1,57 +1,72 @@
 import React, { useState } from 'react';
-import { divisionStructure, divisionColors, DIVISION_DATA } from '../constants';
+import { DIVISION_DATA, divisionColors } from '../constants';
 import DivisionSquare from './DivisionSquare';
 import { TeamModal } from './TeamModal';
 import type { Division, SprintData } from '../types';
-
 import { initializeSprintData } from '../utils';
 
-interface DivisionPyramidProps {
+interface TimelineProps {
   sprintData: SprintData;
 }
 
-const DivisionPyramid: React.FC<DivisionPyramidProps> = ({ sprintData: initialSprintData }) => {
+const Timeline: React.FC<TimelineProps> = ({ sprintData: initialSprintData }) => {
   const [sprintData, setSprintData] = useState<SprintData>(
     () => initializeSprintData(initialSprintData)
   );
-
   const [selectedDivision, setSelectedDivision] = useState<Division | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSquareClick = (divisionNumber: number) => {
     const division = DIVISION_DATA[divisionNumber - 1];
-    console.log('Clicked division:', division);
-    console.log('SprintData keys:', Object.keys(sprintData));
     setSelectedDivision(division);
     setIsModalOpen(true);
   };
 
-  return (
-    <div className="min-h-screen w-full text-white flex flex-col items-center justify-center p-4 sm:p-8 overflow-hidden">
-      
+  // Divisions in order 1 → 11
+  const orderedDivisions = DIVISION_DATA.map((_, i) => i + 1);
 
-      <main className="flex flex-col items-center justify-center w-full max-w-7xl">
-        {divisionStructure.slice().reverse().map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className="flex justify-center items-center flex-wrap"
-            style={{ animation: `fadeInUp 0.5s ${rowIndex * 0.15}s ease-out forwards`, opacity: 0 }}
-          >
-            {row.map((divisionNumber) => {
-              const division = DIVISION_DATA[divisionNumber - 1];
-              return (
-                <DivisionSquare
-                  key={divisionNumber}
-                  divisionNumber={divisionNumber}
-                  divisionName={division.name}
-                  className={divisionColors[divisionNumber - 1]}
-                  emoji={division.emoji}
-                  onClick={() => handleSquareClick(divisionNumber)}
-                />
-              );
-            })}
-          </div>
-        ))}
+  return (
+    <div className="min-h-screen w-full text-white flex flex-col items-center justify-start p-4 sm:p-8 overflow-hidden relative">
+      
+      {/* Central vertical line */}
+      <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-600 -translate-x-1/2"></div>
+
+      <main className="w-full max-w-4xl flex flex-col items-center space-y-2">
+        {orderedDivisions.map((divisionNumber, index) => {
+          const division = DIVISION_DATA[divisionNumber - 1];
+          const isLeft = index % 2 === 0;
+
+          return (
+            <div key={divisionNumber} className="w-full flex relative">
+  {/* Left half */}
+  <div className="w-1/2 flex justify-end pr-4">
+    {isLeft && (
+      <DivisionSquare
+        divisionNumber={divisionNumber}
+        divisionName={division.name}
+        className={divisionColors[divisionNumber - 1]}
+        emoji={division.emoji}
+        onClick={() => handleSquareClick(divisionNumber)}
+      />
+    )}
+  </div>
+
+  {/* Right half */}
+  <div className="w-1/2 flex justify-start pl-4">
+    {!isLeft && (
+      <DivisionSquare
+        divisionNumber={divisionNumber}
+        divisionName={division.name}
+        className={divisionColors[divisionNumber - 1]}
+        emoji={division.emoji}
+        onClick={() => handleSquareClick(divisionNumber)}
+      />
+    )}
+  </div>
+</div>
+
+          );
+        })}
       </main>
 
       <TeamModal
@@ -60,15 +75,8 @@ const DivisionPyramid: React.FC<DivisionPyramidProps> = ({ sprintData: initialSp
         division={selectedDivision}
         sprintData={sprintData}
       />
-
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </div>
   );
 };
 
-export default DivisionPyramid;
+export default Timeline;

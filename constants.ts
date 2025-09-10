@@ -2,9 +2,9 @@ import { Division, SprintData } from "./types";
 
 // The structure of the staircase, from bottom row to top row.
 export const divisionStructure: number[][] = [
-  [11, 10, 9, 8, 7],
-  [6, 5, 4],
-  [3, 2],
+  [7, 8, 9, 10, 11],
+  [4, 5, 6],
+  [2, 3],
   [1],
 ];
 
@@ -40,11 +40,11 @@ export const divisionNames: string[] = [
 // The styles are designed to show a clear progression from "undesirable" to "prestigious".
 export const divisionColors: string[] = [
   // Top Ranks (1-3): Prestigious, metallic, and radiant
-  'bg-amber-600/10 border-amber-500/80 text-amber-300 hover:bg-amber-600/20 hover:border-amber-400', // Div 1 (Bronze)
-  'bg-slate-400/10 border-slate-300/80 text-slate-200 hover:bg-slate-400/20 hover:border-slate-200',   // Div 2 (Silver)
-  'bg-yellow-400/10 border-yellow-400/80 text-yellow-200 hover:bg-yellow-400/20 hover:border-yellow-300', // Div 3 (Gold)
+  'bg-yellow-400/10 border-yellow-400/80 text-yellow-200 hover:bg-yellow-400/20 hover:border-yellow-300', // Div 1 (Gold)
+  'bg-amber-400/10 border-amber-400/80 text-amber-200 hover:bg-amber-400/20 hover:border-amber-300',     // Div 2 (Mid-Gold)
+  'bg-amber-600/10 border-amber-500/80 text-amber-300 hover:bg-amber-600/20 hover:border-amber-400',     // Div 3 (Bronze)
 
-  // Mid Ranks (4-6): More vibrant, respectable colors
+   // Mid Ranks (4-6): More vibrant, respectable colors
   'bg-purple-500/10 border-purple-500/80 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400', // Div 4
   'bg-fuchsia-500/10 border-fuchsia-500/80 text-fuchsia-300 hover:bg-fuchsia-500/20 hover:border-fuchsia-400', // Div 5
   'bg-pink-500/10 border-pink-500/80 text-pink-300 hover:bg-pink-500/20 hover:border-pink-400',         // Div 6

@@ -10,10 +10,10 @@ interface DivisionSquareProps {
 
 const DivisionSquare: React.FC<DivisionSquareProps> = ({ divisionNumber, divisionName, className, emoji, onClick }) => {
   const getBadgeStyle = (rank: number): string => {
-    if (rank === 11) return 'bg-gradient-to-br from-yellow-300 via-amber-400 to-orange-500 text-slate-900 border-2 border-yellow-200 shadow-xl shadow-yellow-500/40';
-    if (rank === 10) return 'bg-gradient-to-br from-slate-200 via-gray-300 to-slate-400 text-slate-800 border-2 border-slate-100 shadow-lg shadow-gray-500/40';
-    if (rank === 9) return 'bg-gradient-to-br from-amber-600 via-orange-700 to-yellow-800 text-white border-2 border-amber-400 shadow-lg shadow-orange-700/40';
-    if (rank >= 6) return 'bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white border-2 border-purple-300 shadow-lg shadow-fuchsia-500/40';
+    if (rank === 1) return 'bg-gradient-to-br from-yellow-300 via-amber-400 to-orange-500 text-slate-900 border-2 border-yellow-200 shadow-xl shadow-yellow-500/40';
+    if (rank === 2) return 'bg-gradient-to-br from-slate-200 via-gray-300 to-slate-400 text-slate-800 border-2 border-slate-100 shadow-lg shadow-gray-500/40';
+    if (rank === 3) return 'bg-gradient-to-br from-amber-600 via-orange-700 to-yellow-800 text-white border-2 border-amber-400 shadow-lg shadow-orange-700/40';
+    if (rank <= 6) return 'bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white border-2 border-purple-300 shadow-lg shadow-fuchsia-500/40';
     return 'bg-slate-600 text-slate-300 border-2 border-slate-500 shadow-md shadow-black/30';
   };
 
@@ -35,7 +35,7 @@ const DivisionSquare: React.FC<DivisionSquareProps> = ({ divisionNumber, divisio
           overflow-hidden
           p-2
           ${className}
-          ${divisionNumber === 11 ? 'animate-pulse-glow' : ''}
+          ${divisionNumber === 1 ? 'animate-pulse-glow' : ''}
         `}
       >
         <div 

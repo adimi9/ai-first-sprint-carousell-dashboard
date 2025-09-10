@@ -40,7 +40,7 @@ export const StatsBubble: React.FC<StatsBubbleProps> = ({ totalParticipants, tot
 
   return (
     <div className="relative w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] flex items-center justify-center text-white">
-      <div className="absolute w-full h-full rounded-full animate-spin-slow" style={{ background: 'conic-gradient(from 180deg at 50% 50%, #764ba2, #667eea, #f093fb, #764ba2)' }}></div>
+      <div className="absolute w-full h-full rounded-full" style={{ background: 'conic-gradient(from 180deg at 50% 50%, #764ba2, #667eea, #f093fb, #764ba2)' }}></div>
       <div className="absolute w-[180px] h-[180px] sm:w-[270px] sm:h-[270px] bg-[#141931] rounded-full flex items-center justify-center">
          <svg className="absolute w-full h-full transform -rotate-90" viewBox="0 0 200 200">
           <circle cx="100" cy="100" r="90" stroke="rgba(255,255,255,0.1)" strokeWidth="10" fill="transparent" />
@@ -65,7 +65,7 @@ export const StatsBubble: React.FC<StatsBubbleProps> = ({ totalParticipants, tot
         </svg>
       </div>
 
-      <div className="absolute w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] rounded-full animate-spin-slow-reverse bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center p-2 sm:p-4 text-center">
+      <div className="absolute w-[160px] h-[160px] sm:w-[240px] sm:h-[240px] rounded-full bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center p-2 sm:p-4 text-center">
         <div className="text-3xl sm:text-5xl font-bold text-white tracking-tighter">
           <AnimatedNumber value={Math.round(percentage)} />%
         </div>

@@ -27,15 +27,8 @@ const DivisionPyramid: React.FC<DivisionPyramidProps> = ({ sprintData: initialSp
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white flex flex-col items-center justify-center p-4 sm:p-8 overflow-hidden">
-      <header className="text-center mb-8 sm:mb-12">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-fuchsia-500">
-          Division Hierarchy
-        </h1>
-        <p className="mt-3 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
-          A visual representation of 11 divisions arranged in a staircase, from lowest to highest rank.
-        </p>
-      </header>
+    <div className="min-h-screen w-full text-white flex flex-col items-center justify-center p-4 sm:p-8 overflow-hidden">
+      
 
       <main className="flex flex-col items-center justify-center w-full max-w-7xl">
         {divisionStructure.slice().reverse().map((row, rowIndex) => (

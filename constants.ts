@@ -2,10 +2,10 @@ import { Division, SprintData } from "./types";
 
 // The structure of the staircase, from bottom row to top row.
 export const divisionStructure: number[][] = [
-  [1, 2, 3, 4, 5],
-  [6, 7, 8],
-  [9, 10],
-  [11],
+  [11, 10, 9, 8, 7],
+  [6, 5, 4],
+  [3, 2],
+  [1],
 ];
 
 export const DIVISION_DATA: Division[] = [

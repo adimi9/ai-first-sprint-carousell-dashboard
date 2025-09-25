@@ -1,5 +1,5 @@
-
 {
-  "name": "AI-First Sprint Dashboard",
-  "description": "An interactive, motivational web dashboard for the SCG AI-First initiative using a staircase layout to drive 100% participation through gamification and behavioral psychology."
+  "name": "AI-First Sprint Leaderboard",
+  "description": "A dynamic and visually engaging dashboard to track and rank division participation in the AI-First Sprint, using an animated race-to-the-finish concept.",
+  "requestFramePermissions": []
 }

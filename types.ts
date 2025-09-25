@@ -6,13 +6,19 @@ export interface Division {
   emoji: string;
 }
 
+export interface RankedDivision extends Division {
+  percentage: number;
+  rank: number;
+}
+
 export interface SprintTeam {
   name: string;
   slackLink: string;
 }
 
 export interface SprintData {
-  [key: string]: {
-    [sprintKey: string]: SprintTeam[];
+  [divisionName: string]: {
+    sprint1?: SprintTeam[];
+    sprint2?: SprintTeam[];
   };
 }

@@ -2,83 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI-First Sprint Dashboard</title>
+    <title>AI Sprint Leaderboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
       body {
-        font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Inter', sans-serif;
       }
-      .rainbow-text {
-        background: linear-gradient(to right, #667eea, #764ba2, #f093fb, #667eea);
-        background-size: 200% auto;
-        color: #fff;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: rainbow-slide 3s linear infinite;
-      }
-      .rainbow-bg {
-        background: linear-gradient(to right, #667eea, #764ba2, #f093fb, #667eea);
-        background-size: 200% auto;
-        animation: rainbow-slide 3s linear infinite;
-      }
-      @keyframes rainbow-slide {
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translate3d(0, 30px, 0);
+        }
         to {
-          background-position: 200% center;
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
         }
       }
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0px); }
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
       }
-      @keyframes spin {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
-      @keyframes spin-reverse {
-        from { transform: rotate(360deg); }
-        to { transform: rotate(0deg); }
+      .fade-in {
+        animation: fadeIn 0.3s ease-out forwards;
       }
-      @keyframes shine {
-        0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f0e68c, 0 0 40px #f0e68c; }
-        50% { text-shadow: 0 0 20px #fff, 0 0 30px #f0e68c, 0 0 40px #f0e68c, 0 0 50px #f0e68c; }
-      }
-      @keyframes champion-glow {
-        0%, 100% { box-shadow: 0 0 15px 5px rgba(255, 215, 0, 0.4); }
-        50% { box-shadow: 0 0 25px 10px rgba(255, 215, 0, 0.6); }
-      }
-      @keyframes sleepy-shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: translateX(5px); }
-      }
-      @keyframes pulse-subtle {
-        0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1); }
-        50% { transform: scale(1.01); box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.05); }
-      }
-      .animate-float { animation: float 6s ease-in-out infinite; }
-      .animate-spin-slow { animation: spin 20s linear infinite; }
-      .animate-spin-slow-reverse { animation: spin-reverse 20s linear infinite; }
-      .animate-shine { animation: shine 2s ease-in-out infinite; }
-      .animate-champion-glow { animation: champion-glow 2.5s ease-in-out infinite; }
-      .animate-sleepy-shake { animation: sleepy-shake 0.8s ease-in-out infinite; }
-      .animate-pulse-subtle { animation: pulse-subtle 4s ease-in-out infinite; }
     </style>
   <script type="importmap">
 {
   "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
     "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+    "react": "https://aistudiocdn.com/react@^19.1.1"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
+  <body class="bg-slate-900">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

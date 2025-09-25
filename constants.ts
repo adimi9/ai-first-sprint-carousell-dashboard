@@ -1,11 +1,11 @@
-import { Division, SprintData } from "./types";
+import type { Division, SprintData } from "./types";
 
-// The structure of the staircase, from bottom row to top row.
+// The structure of the staircase, from top row to bottom row.
 export const divisionStructure: number[][] = [
-  [7, 8, 9, 10, 11],
-  [4, 5, 6],
-  [2, 3],
   [1],
+  [2, 3],
+  [4, 5, 6],
+  [7, 8, 9, 10, 11],
 ];
 
 export const DIVISION_DATA: Division[] = [
@@ -22,41 +22,25 @@ export const DIVISION_DATA: Division[] = [
   { name: "Internal Audit", participants: 3, total: 18, emoji: "🔍" },
 ];
 
-export const divisionNames: string[] = [
-  'People & Organisation',      // Div 1
-  'Digital Governance',         // Div 2
-  'Procurement',                // Div 3
-  'Finance',                    // Div 4
-  'Strategy & Transformation',  // Div 5
-  'Comms & Marketing',          // Div 6
-  'Internal Audit',             // Div 7
-  'Partnerships & Engagement',  // Div 8
-  'CIO Office',                 // Div 9
-  'Legal',                      // Div 10
-  'Org Excellence',             // Div 11
-];
-
 // A gradient of color styles for each division, from 1 to 11.
-// The styles are designed to show a clear progression from "undesirable" to "prestigious".
 export const divisionColors: string[] = [
   // Top Ranks (1-3): Prestigious, metallic, and radiant
-  'bg-yellow-400/10 border-yellow-400/80 text-yellow-200 hover:bg-yellow-400/20 hover:border-yellow-300', // Div 1 (Gold)
-  'bg-amber-400/10 border-amber-400/80 text-amber-200 hover:bg-amber-400/20 hover:border-amber-300',     // Div 2 (Mid-Gold)
-  'bg-amber-600/10 border-amber-500/80 text-amber-300 hover:bg-amber-600/20 hover:border-amber-400',     // Div 3 (Bronze)
+  'bg-yellow-400/10 border-yellow-400/80 text-yellow-200 hover:bg-yellow-400/20 hover:border-yellow-300 shadow-yellow-400/20', // Div 1 (Gold)
+  'bg-slate-400/10 border-slate-400/80 text-slate-200 hover:bg-slate-400/20 hover:border-slate-300 shadow-slate-400/20', // Div 2 (Silver)
+  'bg-amber-600/10 border-amber-500/80 text-amber-300 hover:bg-amber-600/20 hover:border-amber-400 shadow-amber-600/20', // Div 3 (Bronze)
 
-   // Mid Ranks (4-6): More vibrant, respectable colors
-  'bg-purple-500/10 border-purple-500/80 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400', // Div 4
-  'bg-fuchsia-500/10 border-fuchsia-500/80 text-fuchsia-300 hover:bg-fuchsia-500/20 hover:border-fuchsia-400', // Div 5
-  'bg-pink-500/10 border-pink-500/80 text-pink-300 hover:bg-pink-500/20 hover:border-pink-400',         // Div 6
+   // Mid Ranks (4-6): Vibrant colors
+  'bg-purple-500/10 border-purple-500/80 text-purple-300 hover:bg-purple-500/20 hover:border-purple-400 shadow-purple-500/20', // Div 4
+  'bg-fuchsia-500/10 border-fuchsia-500/80 text-fuchsia-300 hover:bg-fuchsia-500/20 hover:border-fuchsia-400 shadow-fuchsia-500/20', // Div 5
+  'bg-pink-500/10 border-pink-500/80 text-pink-300 hover:bg-pink-500/20 hover:border-pink-400 shadow-pink-500/20', // Div 6
 
-  // Low Ranks (7-11): Muted, flat, and "undesirable"
-  'bg-slate-700/20 border-slate-600 text-slate-400 hover:bg-slate-700/30 hover:border-slate-500', // Div 7
-  'bg-slate-700/20 border-slate-600 text-slate-400 hover:bg-slate-700/30 hover:border-slate-500', // Div 8
-  'bg-zinc-700/20 border-zinc-600 text-zinc-400 hover:bg-zinc-700/30 hover:border-zinc-500',     // Div 9
-  'bg-zinc-700/20 border-zinc-600 text-zinc-400 hover:bg-zinc-700/30 hover:border-zinc-500',     // Div 10
-  'bg-neutral-700/20 border-neutral-600 text-neutral-400 hover:bg-neutral-700/30 hover:border-neutral-500', // Div 11
+  // Low Ranks (7-11): Muted, "undesirable"
+  'bg-slate-700/20 border-slate-600/80 text-slate-400 hover:bg-slate-700/30 hover:border-slate-500 shadow-slate-700/20', // Div 7
+  'bg-slate-700/20 border-slate-600/80 text-slate-400 hover:bg-slate-700/30 hover:border-slate-500 shadow-slate-700/20', // Div 8
+  'bg-zinc-700/20 border-zinc-600/80 text-zinc-400 hover:bg-zinc-700/30 hover:border-zinc-500 shadow-zinc-700/20', // Div 9
+  'bg-zinc-700/20 border-zinc-600/80 text-zinc-400 hover:bg-zinc-700/30 hover:border-zinc-500 shadow-zinc-700/20', // Div 10
+  'bg-neutral-700/20 border-neutral-600/80 text-neutral-400 hover:bg-neutral-700/30 hover:border-neutral-500 shadow-neutral-700/20', // Div 11
 ];
-
 
 export const SPRINT_DATA: SprintData = {
   "Digital Governance": {
